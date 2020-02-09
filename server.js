@@ -130,8 +130,12 @@ let counter = 0;
 function game() {
     counter++;
     if (counter > 0 && counter <= 10){
-        weather = 'summer';
+        weather = 'spring';
     } else if (counter > 10 && counter <= 20){
+        weather = 'summer';
+    }else if (counter > 20 && counter <= 30){
+        weather = 'autumn';
+    }else if (counter > 30 && counter <= 40){
         weather = 'winther';
     }else {
         counter = 0;
@@ -182,8 +186,6 @@ function game() {
 
     //! Send data over the socket to clients who listens "data"
 
-    console.log(weather);
-    console.log(counter);
 
     io.sockets.emit("data", sendData);
 
